@@ -1,0 +1,191 @@
+.container{
+  header{
+    background: $baseColor;
+    height: 3.5rem;
+    color: $fontColor;
+    overflow: hidden;
+  }
+  .title{
+    height: 2.125rem;
+    line-height: 2.125rem;
+    width: 100%;
+    font-size: 1rem;
+    box-shadow: 0 1px 1px rgba(255,255,255,.5);
+    .center-area{
+      margin: 0 3.75rem;
+    }
+    @extend %center;
+    @extend %fl;
+  }
+  .left-area{
+    width: 3.75rem;
+    height: 2.125rem;
+    line-height: 2.125rem;
+    margin-left: -100%;
+    font-size: .75rem;
+    @extend %center;
+    @extend %fl;
+
+    @include downArrow($bgColor:$baseColor,$color:#fff)
+  }
+  .right-area{
+    width: 3.75rem;
+    height: 2.125rem;
+    margin-left: -3.75rem;
+    @extend %center;
+    @extend %fl;
+    span{
+      display: inline-block;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      width: 1rem;
+      height: 1rem;
+      margin: .5625rem 0 0 0;
+      line-height: 1rem;
+      font-size: .65rem;
+    }
+  }
+  .title-info{
+    font-size: .75rem;
+    height: 1.375rem;
+    line-height: 1.1875rem;
+    padding-left: 1rem;
+    margin-top: 2.125rem;
+  }
+
+  //导航
+  .nav{
+    padding: .953125rem 1rem;
+    width: 100%;
+    height: 7.6875rem;
+    background: #c5c5c5;
+    overflow: hidden;
+
+    .item-lists{
+
+    }
+    .m-item{
+      height: 5.78125rem;
+      width: 4.09375rem;
+      float: left;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+      &.active{
+        transform: scale(1.2);
+        margin: 0 20px 0 10px !important;
+        &:after{
+          content: ' ';
+          position: absolute;
+          border: 10px solid transparent;
+          border-bottom-color: #ffffff;
+          left: 50%;
+          margin-left: -10px;
+          bottom: -10px;
+        }
+      }
+    }
+  }
+
+  .info{
+    font-size: .5625rem;
+    line-height: .9rem;
+    padding: 10px .9rem;
+    color: #999;
+    .movie-name{
+      font-size: .7rem;
+      color: #333;
+      margin-right: 1rem;
+    }
+    .movie-range{
+      float: right;
+      color: $baseColor;
+    }
+  }
+
+  .right-arrow{
+    float: right;
+    margin-right: 10px;
+    width: 50px;
+    height: 1.5625rem;
+    @include rightArrow($bWidth:1px,$color:$baseColor,$bgColor:#ffe1e1);
+  }
+  
+  .remind{
+    background: #ffe1e1;
+    color: $baseColor;
+    text-indent: .9rem;
+    font-size: .6rem;
+    height: 1.5625rem;
+    line-height: 1.5625rem;
+  }
+
+  .movie-date{
+    line-height: 1.875rem;
+    background: #f1f1f1;
+    color: #8b8b8b;
+    font-size: .7rem;
+    li{
+      width: 6.03125rem;
+      height: 1.875rem;
+      border-right: 1px dashed #eab4b4;
+      text-align: center;
+      &.active{
+        color: $baseColor;
+        &:after{
+          content: ' ';
+          position: absolute;
+          border: 10px solid transparent;
+          border-bottom-color: #ffffff;
+          left: 50%;
+          margin-left: -10px;
+          bottom: -4px;
+        }
+      }
+    }
+  }
+  .movie-tips{
+    font-size: .6rem;
+    padding-left: .9rem;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    color: #8b8b8b;
+    span{
+      float: left;
+      width: .9rem;
+      height: .9rem;
+      border: 1px solid #8b8b8b;
+      border-radius: 50%;
+      text-align: center;
+      margin: .45rem .45rem 0 0;
+      line-height: .9rem;
+    }
+  }
+
+  .all-lists{
+    .info-table{
+
+    }
+  }
+
+  .info-list{
+    font-size: .6rem;
+    padding: 0 10px;
+    table{
+      width: 100%;
+      text-align: center;
+      color: #aeaeae;
+      td{
+        vertical-align: middle;
+      }
+    }
+    .dark{
+      color: #000;
+    }
+    tr{
+      border-bottom: 1px dashed #ccc;
+    }
+  }
+}

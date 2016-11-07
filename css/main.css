@@ -104,6 +104,9 @@ html, body {
   clear: both; }
 
 .hide {
+  display: none; }
+
+.deep-hide {
   display: none !important; }
 
 /**
@@ -753,6 +756,10 @@ button.swiper-pagination-bullet {
         height: 100%; }
       .container .nav .m-item.active {
         transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
         margin: 0 20px 0 10px !important; }
         .container .nav .m-item.active:after {
           content: ' ';

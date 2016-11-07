@@ -30,7 +30,7 @@
         {{ if $index==0}}
         <article class="info-area">
         {{else}}
-        <article class="info-area">
+        <article class="info-area hide">
         {{/if}}
             <div class="info">
                 <p><span class="movie-name">{{ $value.movie_name }}</span><span>片长：93分钟</span><span class="movie-range">8.8分</span></p>
@@ -44,9 +44,9 @@
                     <ul class="swiper-wrapper">
                         {{each $value.days as v i}}
                         {{if i!==0}}
-                        <li class="swiper-slide">{{v.show_date}}</li>
+                        <li class="swiper-slide date-item">{{v.show_date}}</li>
                         {{else}}
-                        <li class="self-active swiper-slide">{{v.show_date}}</li>
+                        <li class="self-active swiper-slide date-item">{{v.show_date}}</li>
                         {{/if}}
                         {{/each}}
                     </ul>

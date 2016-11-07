@@ -17,11 +17,8 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
         $('.nav').html(html);
         $('.all-lists').html(html2);
 
-
-        $('.info-area').eq(0).siblings().addClass('hide');
-
         $('.info-list').each(function (idx,val) {
-            $(this).find('table').eq(0).siblings().addClass('hide');
+            $(this).find('table').eq(0).siblings().addClass('deep-hide');
         });
 
         var slides=null;
@@ -50,7 +47,7 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
                 var swipeTarget = wrapper.eq(s.clickedIndex).find('.movie-date');
                 //获取当前显示的article下的所有table
                 var tables = wrapper.eq(s.activeIndex).find('table');
-                //为避免swipe组件未知bug，在确保日期列表display属性为block时，进行实例化组件
+                //为避免swipe组件未知bug，在确保日期列表display属性为block时，进行实例化
                 var dtSwiper = new Swiper(swipeTarget[0],{
                     freeMode:true,
                     slidesPerView:'auto',
@@ -59,18 +56,19 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
                         dtSwiper.slideTo(t.clickedIndex,300,function () {
 
                         });
-                        tables.eq(t.clickedIndex).removeClass('hide').siblings().addClass('hide')
+
+                        //tables.eq(t.clickedIndex).removeClass('deep-hide').siblings().addClass('deep-hide');
                     }
                 });
 
             },
             onInit:function (s) {
                 var slides = document.querySelector('.nav').querySelectorAll('.swiper-slide');
-                slides[0].className+=' active';
+                slides[0].className += ' active';
                 //在初始化swipe组件时，默认给第一个日期列表添加swipe功能
                 var swipeTarget = wrapper.eq(s.activeIndex).find('.movie-date');
                 var tables = wrapper.eq(s.activeIndex).find('table');
-                var dtSwiper = new Swiper(swipeTarget,{
+                var dtSwiper = new Swiper(swipeTarget[0],{
                     freeMode:true,
                     slidesPerView:'auto',
                     onTap:function (t) {
@@ -78,14 +76,22 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
                         dtSwiper.slideTo(t.clickedIndex,300,function () {
 
                         });
-                        tables.eq(t.clickedIndex).removeClass('hide').siblings().addClass('hide')
+
+                        //tables.eq(t.clickedIndex).removeClass('deep-hide').siblings().addClass('deep-hide')
                     }
                 })
             }
         });
+
+
     });
 
-
+    $(document).on('click','.date-item',function (e) {
+        var index = $(this).index();
+        var tables = $(this).parents('.time-lists').next().find('table');
+        tables.addClass('deep-hide');
+        tables.eq(index).removeClass('deep-hide');
+    })
 
 
 });

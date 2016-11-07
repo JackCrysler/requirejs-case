@@ -48,6 +48,8 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
 
                 //根据点击图片的索引获取当前的日期列表dom
                 var swipeTarget = wrapper.eq(s.clickedIndex).find('.movie-date');
+                //获取当前显示的article下的所有table
+                var tables = wrapper.eq(s.activeIndex).find('table');
                 //为避免swipe组件未知bug，在确保日期列表display属性为block时，进行实例化组件
                 var dtSwiper = new Swiper(swipeTarget[0],{
                     freeMode:true,
@@ -57,6 +59,7 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
                         dtSwiper.slideTo(t.clickedIndex,300,function () {
 
                         });
+                        tables.eq(t.clickedIndex).removeClass('hide').siblings().addClass('hide')
                     }
                 });
 
@@ -66,6 +69,7 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
                 slides[0].className+=' active';
                 //在初始化swipe组件时，默认给第一个日期列表添加swipe功能
                 var swipeTarget = wrapper.eq(s.activeIndex).find('.movie-date');
+                var tables = wrapper.eq(s.activeIndex).find('table');
                 var dtSwiper = new Swiper(swipeTarget,{
                     freeMode:true,
                     slidesPerView:'auto',
@@ -74,6 +78,7 @@ define(['jquery','../lib/swiper','../tpl/movie','../lib/template-native','../lib
                         dtSwiper.slideTo(t.clickedIndex,300,function () {
 
                         });
+                        tables.eq(t.clickedIndex).removeClass('hide').siblings().addClass('hide')
                     }
                 })
             }

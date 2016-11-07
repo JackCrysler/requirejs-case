@@ -3,4 +3,4 @@ require.config({
         'jquery':'../lib/jquery'
     }
 });
-require(['index','index2']);
+require(['index']);

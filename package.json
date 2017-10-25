@@ -1,25 +1,25 @@
 {
-  "name": "movie",
-  "version": "1.0.0",
-  "description": "facked leying net product",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "gulp",
-    "swiper",
-    "template",
-    "test"
-  ],
-  "author": "teacher",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.17.5",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0"
-  }
+	"name": "movie",
+	"version": "1.0.0",
+	"description": "facked leying net product",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"gulp",
+		"swiper",
+		"template",
+		"tests"
+	],
+	"author": "teacher",
+	"license": "ISC",
+	"devDependencies": {
+		"browser-sync": "^2.17.5",
+		"gulp": "^3.9.1",
+		"gulp-clean": "^0.3.2",
+		"gulp-concat": "^2.6.0",
+		"gulp-sass": "^2.3.2",
+		"gulp-uglify": "^2.0.0"
+	}
 }
